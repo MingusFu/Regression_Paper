@@ -1,0 +1,9 @@
+# Conclusion
+
+This report delved into the key musical features that influence users' preferences for EDM as study music on Spotify. Features such as instrumentalness, optimal levels of tempo and energy, and the valence of a song appear to play pivotal roles in determining users' preferences for an EDM track. Notably, danceability, often considered highly associated with a song's suitability as background music in cognitive tasks, exhibited a complex correlation with a track's popularity in this context. These insights offer valuable guidance for the design of conditions and exposure in an upcoming experimental study focusing on audio features, cognitive performance, and eudaimonia.
+
+A significant limitation of this study is the exclusive use of a simple linear regression model to test hypothesized relationships. The results suggest that more complex mathematical models would be better suited to address the given hypotheses and research questions.
+
+Another limitation is the reliance on the assumption that an increasing preference for EDM as background music during cognitive tasks significantly drives the popularity of EDM songs. However, given the limitations of this data, this fundamental hypothesis cannot be tested.
+
+Looking forward, this research can inform the development of more tailored and effective study music genres and audio features to enhance cognitive performance.

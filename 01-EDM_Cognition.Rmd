@@ -1,0 +1,118 @@
+# Electronic Dance Music \& Cognitive Flow
+
+Although this report primarily seeks to identify the musical features that can induce cognitive flow, it is important to acknowledge that the composition of a song is a complex process. Users' listening experiences are significantly influenced by factors beyond musical features, such as the artists performing the songs and the overall quality of the song. To control for confounding variables that may affect users' cognitive flow state, and to maximize the mediating role of cognitive flow in leading to eudaimonia and self-transcendence, the genre of a song is utilized as a control variable in this study, especially considered how genres affect users' preferences and familiarity of music.
+
+Here is a visualization showing the popularity/likability of different music genres by release year.
+
+```{r, echo=FALSE,message=FALSE}
+spotify$release_year <- substr(spotify$track_album_release_date, 1, 4)
+spotify$genre_popularity <- with(spotify, ave(track_popularity, list(release_year, playlist_subgenre), FUN = mean))
+spotify$release_year <- as.numeric(as.character(spotify$release_year))
+spotify_data<-spotify
+webshot::install_phantomjs()
+```
+```{r}
+
+gg <- ggplot(spotify_data, aes(x = release_year, y = genre_popularity, group = playlist_genre, color = playlist_genre)) +
+  geom_line() + geom_point() +
+  labs(title = "Genre Popularity Over Years", x = "Year", y = "Genre Popularity") +
+  theme_minimal()
+p <- ggplotly(gg)
+p
+```
+
+Based on this plot, it can be firstly understood that Spotify officially categorizes songs into six genres: electronic dance music, Latin music, pop music, rhythm & blues, rap, and rock music.
+
+## Why Choose EDM as Study Music
+
+![Electronic dance music](4.png)
+
+Both academic and industrial reports indicate that electronic dance music (EDM), including its subgenres like New Age/ambient EDM and trance/bass music, are frequently chosen as study music by users [e.g.,@bosk2022electronic; @dov2020positive; @NationalUniversity2021;]. These reports also highlight that ambient EDM music is often recommended as an optimal choice for study music because: 1) it typically has few or no lyrics, making it less distracting during study sessions; and 2) it is preferred by those who do not favor other types of instrumental music, such as classical music [@NationalUniversity2021].
+
+Furthermore, evidence from experimental studies suggests that there are optimal levels of tempo and energy in songs that influence their effectiveness in improving memory and learning [e.g., @musliu2017impact].
+
+Therefore, it can be assumed that:
+
+- **H1**: Compared to other genres, EDM generally has a higher level of instrumentalness and a lower level of speechiness.
+
+```{r}
+edm<-subset(spotify, playlist_genre=="edm")
+other_genre <- anti_join(spotify, edm, by = "playlist_genre")
+t.test(edm$instrumentalness,other_genre$instrumentalness,paired=FALSE,alternative="greater")
+t.test(edm$speechiness,other_genre$speechiness,paired=FALSE,alternative="less")
+```
+
+- **H2**: Compared to other genres, EDM generally exhibits different levels of a) tempo and b) energy.
+
+```{r}
+t.test(edm$tempo,other_genre$tempo,parired=FALSE)
+t.test(edm$energy,other_genre$energy,parired=FALSE)
+```
+
+Supported by two-sample t-tests, it could be concluded that given a 0.95 confidence level, EDM 1) compared to other genres, tends to have higher instrumentalness and lower speechiness, 2) exhibits distinct levels of tempo and energy compared to other genres. These results might support the idea that these audio features of EDM make it a favorable choice for study music
+
+## EDM as Study Music \& Popularity
+
+Additionally, empirical evidence from experimental research indicates that musical activities with high levels of perceived pleasure and high engagement in movement can induce a cognitive flow state, particularly in a performance context [e.g., @loepthien2022flow].
+
+Given the observations show a significantly increasing preference for instrumental music, especially EDM, as background music during cognitive tasks on Spotify[e.g., @NationalUniversity2021;@Spotify2021], this trend could suggest that such preferences significantly drive the popularity of EDM songs.
+
+If this "bold hypothesis" is considered valid, the following assumptions can be made:
+
+- **H3**: EDM songs with higher levels of valence and danceability will have a higher popularity ranking.
+
+- **H4**: It can also be assumed, based on the "popularity plot," that EDM songs released more recently will have a higher popularity ranking.
+
+```{r}
+reg_1<-lm(track_popularity~release_year+danceability+valence,edm)
+stargazer(reg_1,type="text",star.cutoffs=c(.05,.01,.001))
+```
+
+
+```{r}
+plot(edm$track_popularity~edm$release_year)
+abline(reg_1)
+```
+
+An interesting issue arises due to the sampling pattern of the "spotifyr" package. In the visualization example illustrating the relationship between track popularity and release year for EDM music, it is observed that:
+
+- **Heteroscedasticity**: the variance of the residuals seems to increase with the increasing release year. This can be seen from the increasingly dispersed trend of the scatter plot, especially after the year 2000, where the dispersion of the residuals noticeably increases.
+
+- **Non-linear relationship**: the distribution of the data might suggests the possibility of a non-linear relationship.
+
+Additionally, a Q-Q plot was utilized to examine whether the residual distribution approximate a normal distribution. 
+
+```{r}
+residuals_1 <- reg_1$residuals
+qqnorm(residuals_1)
+qqline(residuals_1, col = "red",lwd=2)
+```
+
+It can be seen from the points at the ends deviate from the reference line, especially at the right end of the plot, indicating potential skewness in the residual distribution at the extreme values of the data, suggesting that the tail weight of the residual distribution does not match that of a normal distribution.
+
+It can  be concluded that simple linear model might not be BLUE model here to examine the hypothesized relationship.
+
+Additionally, a White'sRobust Standard Errors is utilized for correcting estimates of OLS regression coefficients of release year in the presence of heteroskedasticity.The adjustment resulted in a slightly different standard error for the release year coefficient.
+
+```{r}
+robust_1<-vcovHC(reg_1,"HC1")
+result_1<-coeftest(reg_1,robust_1)
+result_1["release_year",]
+summary(reg_1)
+```
+
+### Conclusion From OLS
+
+Although the results from OLS suggest that simple linear model might not be the best fit for the given data, it can still be concluded from the OLS regressions that:
+
+-**1. Release Year**: holding other variables constant, for each additional release year, the popularity scores of EDM songs increases by approximately 1.869 points, suggesting newer EDM songs tend to be more popular, supporting hypothesis 4.
+
+-**2. Danceability**: contrary to what might be expected, a significant but negative relationship between danceability feature and track popularity score. For each additional 0.1 increase in danceability score, the track's popularity would decrease by approximately 0.9099 points.
+
+-**3. Valence**: a significant and strongly positive relationship exists between valence and track popularity score, predicted by the model. Holding others constant, for each additioanl 0.1 increase in valence score, the track's popularity scores would increase by approximately 1.7389 points.
+
+-**4. R-squared**: approximately only 8.8% of the variability in track popularity can be explained when utilizing a simple linear model.
+
+-**5. F Statistic**: with a 194.24 f-statistic score, indicating that the model as a whole is statistically significant.
+
+Overall, the OLS regression supports Hypothesis 4 (H4) and partially supports Hypothesis 3 (H3). Contrary to the original hypothesis regarding the relationship between danceability and popularity, this might be due to two reasons: 1) Danceability might be inversely correlated with other musical features that affect popularity. 2) In line with Loepthien's 2022 study, users in a studying context might prefer less danceable tracks for background listening. Additionally, issues with model fit, as indicated by the residual analysis and regression diagnostics, suggest that further investigation with more complex models or additional variables might be necessary for a more comprehensive understanding of what drives the popularity of EDM songs.

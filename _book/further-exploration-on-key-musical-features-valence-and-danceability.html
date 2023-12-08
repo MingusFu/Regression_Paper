@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 3 Further Exploration on Key Musical Features: valence and danceability | A Scientific Way to Build a Likable Studying Music Playlist</title>
+  <meta name="description" content="This is Junqi’s final project in Professor Taylor C. Boas’s PO841 class." />
+  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 3 Further Exploration on Key Musical Features: valence and danceability | A Scientific Way to Build a Likable Studying Music Playlist" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="This is Junqi’s final project in Professor Taylor C. Boas’s PO841 class." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 3 Further Exploration on Key Musical Features: valence and danceability | A Scientific Way to Build a Likable Studying Music Playlist" />
+  
+  <meta name="twitter:description" content="This is Junqi’s final project in Professor Taylor C. Boas’s PO841 class." />
+  
+
+<meta name="author" content="Junqi Fu" />
+
+
+<meta name="date" content="2023-12-07" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="edm-as-study-music-popularity.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.10.2/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Regression & Visualization of Spotify</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Background</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="music-cognitive-perofrmance.html"><a href="music-cognitive-perofrmance.html"><i class="fa fa-check"></i><b>1.1</b> Music &amp; Cognitive Perofrmance</a></li>
+<li class="chapter" data-level="1.2" data-path="music-eudaimonia.html"><a href="music-eudaimonia.html"><i class="fa fa-check"></i><b>1.2</b> Music &amp; Eudaimonia</a></li>
+<li class="chapter" data-level="1.3" data-path="a-scientific-way-to-build-a-likable-studying-music-playlist-for-an-upcoming-cognitive-flow-study.html"><a href="a-scientific-way-to-build-a-likable-studying-music-playlist-for-an-upcoming-cognitive-flow-study.html"><i class="fa fa-check"></i><b>1.3</b> A Scientific Way to Build a Likable Studying Music Playlist For An Upcoming Cognitive Flow Study</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="electronic-dance-music-cognitive-flow.html"><a href="electronic-dance-music-cognitive-flow.html"><i class="fa fa-check"></i><b>2</b> Electronic Dance Music &amp; Cognitive Flow</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="why-choose-edm-as-study-music.html"><a href="why-choose-edm-as-study-music.html"><i class="fa fa-check"></i><b>2.1</b> Why Choose EDM as Study Music</a></li>
+<li class="chapter" data-level="2.2" data-path="edm-as-study-music-popularity.html"><a href="edm-as-study-music-popularity.html"><i class="fa fa-check"></i><b>2.2</b> EDM as Study Music &amp; Popularity</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="edm-as-study-music-popularity.html"><a href="edm-as-study-music-popularity.html#conclusion-from-ols"><i class="fa fa-check"></i><b>2.2.1</b> Conclusion From OLS</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="further-exploration-on-key-musical-features-valence-and-danceability.html"><a href="further-exploration-on-key-musical-features-valence-and-danceability.html"><i class="fa fa-check"></i><b>3</b> Further Exploration on Key Musical Features: valence and danceability</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">A Scientific Way to Build a Likable Studying Music Playlist</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="further-exploration-on-key-musical-features-valence-and-danceability" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">Chapter 3</span> Further Exploration on Key Musical Features: valence and danceability<a href="further-exploration-on-key-musical-features-valence-and-danceability.html#further-exploration-on-key-musical-features-valence-and-danceability" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>To gain an in-depth understanding of the results for Hypothesis 3 (H3), an OLS regression analysis was conducted between danceability and track popularity. This was done in light of various existing evidence that supports the notion that people prefer tracks they can dance or move to, in relation to their reasons for listening. <span class="citation">(e.g., <a href="#ref-duman2022music">Duman et al. 2022</a>; <a href="#ref-loepthien2022flow">Loepthien and Leipold 2022</a>)</span></p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="further-exploration-on-key-musical-features-valence-and-danceability.html#cb21-1" tabindex="-1"></a>reg_2<span class="ot">&lt;-</span><span class="fu">lm</span>(track_popularity<span class="sc">~</span>danceability,edm)</span>
+<span id="cb21-2"><a href="further-exploration-on-key-musical-features-valence-and-danceability.html#cb21-2" tabindex="-1"></a><span class="fu">summary</span>(reg_2)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = track_popularity ~ danceability, data = edm)
+## 
+## Residuals:
+##    Min     1Q Median     3Q    Max 
+## -35.26 -17.94   1.28  16.15  64.21 
+## 
+## Coefficients:
+##              Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)    33.914      1.607  21.103   &lt;2e-16 ***
+## danceability    1.403      2.411   0.582    0.561    
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 23.16 on 6041 degrees of freedom
+## Multiple R-squared:  5.606e-05,  Adjusted R-squared:  -0.0001095 
+## F-statistic: 0.3387 on 1 and 6041 DF,  p-value: 0.5606</code></pre>
+
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div class="csl-entry">
+Algoe, Sara B, and Jonathan Haidt. 2009. <span>“Witnessing Excellence in Action: The <span>‘Other-Praising’</span> Emotions of Elevation, Gratitude, and Admiration.”</span> <em>The Journal of Positive Psychology</em> 4 (2): 105–27.
+</div>
+<div class="csl-entry">
+Arvidsson Joakim. 2023. <span>“30000 Spotify Songs.”</span> Kaggle. <a href="https://www.kaggle.com/datasets/joebeachcapital/30000-spotify-songs">https://www.kaggle.com/datasets/joebeachcapital/30000-spotify-songs</a>.
+</div>
+<div class="csl-entry">
+Bosk, Andry. 2022. <span>“Is Electronic Music Good for Studying?”</span> Rave Jungle. <a href="https://www.ravejungle.com/2022/12/16/edm-music-studying/">https://www.ravejungle.com/2022/12/16/edm-music-studying/</a>.
+</div>
+<div class="csl-entry">
+Dov, Yotam. 2020. <span>“Positive Effects of Listening to Electronic Dance Music While Studying.”</span> We Rave You. <a href="https://weraveyou.com/2020/09/positive-effects-of-listening-to-electronic-dance-music-while-studying/">https://weraveyou.com/2020/09/positive-effects-of-listening-to-electronic-dance-music-while-studying/</a>.
+</div>
+<div class="csl-entry">
+Duman, Deniz, Pedro Neto, Alexandros Mavrolampados, Petri Toiviainen, and Geoff Luck. 2022. <span>“Music We Move to: Spotify Audio Features and Reasons for Listening.”</span> <em>Plos One</em> 17 (9): e0275228.
+</div>
+<div class="csl-entry">
+Felnhofer, Anna, Anna-Katharina Heinzle, and Oswald D Kothgassner. 2013. <span>“Game Experience and Behavior in Young Women: A Comparison of Interface Technologies.”</span> <em>Proceedings of the Usability Day XI</em>, 1–6.
+</div>
+<div class="csl-entry">
+Huang, Rong-Hwa, and Yi-Nuo Shih. 2011. <span>“Effects of Background Music on Concentration of Workers.”</span> <em>Work</em> 38 4: 383–87. <a href="https://api.semanticscholar.org/CorpusID:404286">https://api.semanticscholar.org/CorpusID:404286</a>.
+</div>
+<div class="csl-entry">
+Loepthien, Till, and Bernhard Leipold. 2022. <span>“Flow in Music Performance and Music-Listening: Differences in Intensity, Predictors, and the Relationship Between Flow and Subjective Well-Being.”</span> <em>Psychology of Music</em> 50 (1): 111–26.
+</div>
+<div class="csl-entry">
+Masha, Godkin. 2021. <span>“Can Music Help You Study and Focus?”</span> <a href="https://www.nu.edu/blog/can-music-help-you-study-and-focus/" class="uri">https://www.nu.edu/blog/can-music-help-you-study-and-focus/</a>.
+</div>
+<div class="csl-entry">
+Musliu, Afrim, Besa Berisha, Alban Musaj, Driton Latifi, and Drin Peci. 2017. <span>“The Impact of Music in Memory.”</span> <em>European Journal of Social Science Education and Research</em> 4 (4): 138–43.
+</div>
+<div class="csl-entry">
+Nijs, Luc, and Georgia Nicolaou. 2021. <span>“Flourishing in Resonance: Joint Resilience Building Through Music and Motion.”</span> <em>Frontiers in Psychology</em> 12: 666702.
+</div>
+<div class="csl-entry">
+Spotify. 2021. <span>“New Spotify Study Shows Audio Is the Number One Productivity Booster.”</span> <a href="https://newsroom.spotify.com/2021-03-04/new-spotify-study-shows-audio-is-the-number-one-productivity-booster/" class="uri">https://newsroom.spotify.com/2021-03-04/new-spotify-study-shows-audio-is-the-number-one-productivity-booster/</a>.
+</div>
+<div class="csl-entry">
+Stellar, Jennifer E, Amie M Gordon, Paul K Piff, Daniel Cordaro, Craig L Anderson, Yang Bai, Laura A Maruskin, and Dacher Keltner. 2017. <span>“Self-Transcendent Emotions and Their Social Functions: Compassion, Gratitude, and Awe Bind Us to Others Through Prosociality.”</span> <em>Emotion Review</em> 9 (3): 200–207.
+</div>
+<div class="csl-entry">
+Van Cappellen, Patty, and Bernard Rimé. 2013. <span>“Positive Emotions and Self-Transcendence.”</span> In <em>Religion, Personality, and Social Behavior</em>, 133–56. Psychology Press.
+</div>
+<div class="csl-entry">
+Verneert, Femke, Luc Nijs, and Thomas De Baets. 2021. <span>“A Space for Collaborative Creativity. How Collective Improvising Shapes <span>‘a Sense of Belonging’</span>.”</span> <em>Frontiers in Psychology</em> 2021: 1080.
+</div>
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-duman2022music" class="csl-entry">
+Duman, Deniz, Pedro Neto, Alexandros Mavrolampados, Petri Toiviainen, and Geoff Luck. 2022. <span>“Music We Move to: Spotify Audio Features and Reasons for Listening.”</span> <em>Plos One</em> 17 (9): e0275228.
+</div>
+<div id="ref-loepthien2022flow" class="csl-entry">
+Loepthien, Till, and Bernhard Leipold. 2022. <span>“Flow in Music Performance and Music-Listening: Differences in Intensity, Predictors, and the Relationship Between Flow and Subjective Well-Being.”</span> <em>Psychology of Music</em> 50 (1): 111–26.
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="edm-as-study-music-popularity.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/02-parts.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

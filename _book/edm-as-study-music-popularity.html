@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>2.2 EDM as Study Music &amp; Popularity | A Scientific Way to Build a Likable Studying Music Playlist</title>
+  <meta name="description" content="This is Junqi’s final project in Professor Taylor C. Boas’s PO841 class." />
+  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="2.2 EDM as Study Music &amp; Popularity | A Scientific Way to Build a Likable Studying Music Playlist" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="This is Junqi’s final project in Professor Taylor C. Boas’s PO841 class." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="2.2 EDM as Study Music &amp; Popularity | A Scientific Way to Build a Likable Studying Music Playlist" />
+  
+  <meta name="twitter:description" content="This is Junqi’s final project in Professor Taylor C. Boas’s PO841 class." />
+  
+
+<meta name="author" content="Junqi Fu" />
+
+
+<meta name="date" content="2023-12-07" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="why-choose-edm-as-study-music.html"/>
+<link rel="next" href="further-exploration-on-key-musical-features-danceability.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.10.2/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Regression & Visualization of Spotify</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Background</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="music-cognitive-perofrmance.html"><a href="music-cognitive-perofrmance.html"><i class="fa fa-check"></i><b>1.1</b> Music &amp; Cognitive Perofrmance</a></li>
+<li class="chapter" data-level="1.2" data-path="music-eudaimonia.html"><a href="music-eudaimonia.html"><i class="fa fa-check"></i><b>1.2</b> Music &amp; Eudaimonia</a></li>
+<li class="chapter" data-level="1.3" data-path="a-scientific-way-to-build-a-likable-studying-music-playlist-for-an-upcoming-cognitive-flow-study.html"><a href="a-scientific-way-to-build-a-likable-studying-music-playlist-for-an-upcoming-cognitive-flow-study.html"><i class="fa fa-check"></i><b>1.3</b> A Scientific Way to Build a Likable Studying Music Playlist For An Upcoming Cognitive Flow Study</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="electronic-dance-music-cognitive-flow.html"><a href="electronic-dance-music-cognitive-flow.html"><i class="fa fa-check"></i><b>2</b> Electronic Dance Music &amp; Cognitive Flow</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="why-choose-edm-as-study-music.html"><a href="why-choose-edm-as-study-music.html"><i class="fa fa-check"></i><b>2.1</b> Why Choose EDM as Study Music</a></li>
+<li class="chapter" data-level="2.2" data-path="edm-as-study-music-popularity.html"><a href="edm-as-study-music-popularity.html"><i class="fa fa-check"></i><b>2.2</b> EDM as Study Music &amp; Popularity</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="edm-as-study-music-popularity.html"><a href="edm-as-study-music-popularity.html#conclusion-from-ols"><i class="fa fa-check"></i><b>2.2.1</b> Conclusion From OLS</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="further-exploration-on-key-musical-features-danceability.html"><a href="further-exploration-on-key-musical-features-danceability.html"><i class="fa fa-check"></i><b>3</b> Further Exploration on Key Musical Features: danceability</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="interpretation-testing.html"><a href="interpretation-testing.html"><i class="fa fa-check"></i><b>3.1</b> Interpretation Testing</a></li>
+<li class="chapter" data-level="3.2" data-path="interaction-effects-of-danceability-and-loudness-on-popularity.html"><a href="interaction-effects-of-danceability-and-loudness-on-popularity.html"><i class="fa fa-check"></i><b>3.2</b> Interaction Effects of Danceability and Loudness on Popularity</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="conclusion.html"><a href="conclusion.html"><i class="fa fa-check"></i><b>4</b> Conclusion</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">A Scientific Way to Build a Likable Studying Music Playlist</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="edm-as-study-music-popularity" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> EDM as Study Music &amp; Popularity<a href="edm-as-study-music-popularity.html#edm-as-study-music-popularity" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Additionally, empirical evidence from experimental research indicates that musical activities with high levels of perceived pleasure and high engagement in movement can induce a cognitive flow state, particularly in a performance context <span class="citation">(e.g., <a href="#ref-loepthien2022flow">Loepthien and Leipold 2022</a>)</span>.</p>
+<p>Given the observations show a significantly increasing preference for instrumental music, especially EDM, as background music during cognitive tasks on Spotify<span class="citation">(e.g., <a href="#ref-NationalUniversity2021">Masha 2021</a>; <a href="#ref-Spotify2021">Spotify 2021</a>)</span>, this trend could suggest that such preferences significantly drive the popularity of EDM songs.</p>
+<p>If this “bold hypothesis” is considered valid, the following assumptions can be made:</p>
+<ul>
+<li><p><strong>H3</strong>: EDM songs with higher levels of valence and danceability will have a higher popularity ranking.</p></li>
+<li><p><strong>H4</strong>: It can also be assumed, based on the “popularity plot,” that EDM songs released more recently will have a higher popularity ranking.</p></li>
+</ul>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="edm-as-study-music-popularity.html#cb12-1" tabindex="-1"></a>reg_1<span class="ot">&lt;-</span><span class="fu">lm</span>(track_popularity<span class="sc">~</span>release_year<span class="sc">+</span>danceability<span class="sc">+</span>valence,edm)</span>
+<span id="cb12-2"><a href="edm-as-study-music-popularity.html#cb12-2" tabindex="-1"></a><span class="fu">stargazer</span>(reg_1,<span class="at">type=</span><span class="st">&quot;text&quot;</span>,<span class="at">star.cutoffs=</span><span class="fu">c</span>(.<span class="dv">05</span>,.<span class="dv">01</span>,.<span class="dv">001</span>))</span></code></pre></div>
+<pre><code>## 
+## =================================================
+##                          Dependent variable:     
+##                     -----------------------------
+##                           track_popularity       
+## -------------------------------------------------
+## release_year                  1.869***           
+##                                (0.087)           
+##                                                  
+## danceability                  -9.099***          
+##                                (2.488)           
+##                                                  
+## valence                       17.389***          
+##                                (1.365)           
+##                                                  
+## Constant                    -3,734.456***        
+##                               (174.714)          
+##                                                  
+## -------------------------------------------------
+## Observations                    6,043            
+## R2                              0.088            
+## Adjusted R2                     0.088            
+## Residual Std. Error      22.117 (df = 6039)      
+## F Statistic           194.241*** (df = 3; 6039)  
+## =================================================
+## Note:               *p&lt;0.05; **p&lt;0.01; ***p&lt;0.001</code></pre>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="edm-as-study-music-popularity.html#cb14-1" tabindex="-1"></a><span class="fu">plot</span>(edm<span class="sc">$</span>track_popularity<span class="sc">~</span>edm<span class="sc">$</span>release_year)</span>
+<span id="cb14-2"><a href="edm-as-study-music-popularity.html#cb14-2" tabindex="-1"></a><span class="fu">abline</span>(reg_1)</span></code></pre></div>
+<pre><code>## Warning in abline(reg_1): only using the first two of 4 regression coefficients</code></pre>
+<p><img src="_main_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p>An interesting issue arises due to the sampling pattern of the “spotifyr” package. In the visualization example illustrating the relationship between track popularity and release year for EDM music, it is observed that:</p>
+<ul>
+<li><p><strong>Heteroscedasticity</strong>: the variance of the residuals seems to increase with the increasing release year. This can be seen from the increasingly dispersed trend of the scatter plot, especially after the year 2000, where the dispersion of the residuals noticeably increases.</p></li>
+<li><p><strong>Non-linear relationship</strong>: the distribution of the data might suggests the possibility of a non-linear relationship.</p></li>
+</ul>
+<p>Additionally, a Q-Q plot was utilized to examine whether the residual distribution approximate a normal distribution.</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="edm-as-study-music-popularity.html#cb16-1" tabindex="-1"></a>residuals_1 <span class="ot">&lt;-</span> reg_1<span class="sc">$</span>residuals</span>
+<span id="cb16-2"><a href="edm-as-study-music-popularity.html#cb16-2" tabindex="-1"></a><span class="fu">qqnorm</span>(residuals_1)</span>
+<span id="cb16-3"><a href="edm-as-study-music-popularity.html#cb16-3" tabindex="-1"></a><span class="fu">qqline</span>(residuals_1, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>,<span class="at">lwd=</span><span class="dv">2</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<p>It can be seen from the points at the ends deviate from the reference line, especially at the right end of the plot, indicating potential skewness in the residual distribution at the extreme values of the data, suggesting that the tail weight of the residual distribution does not match that of a normal distribution.</p>
+<p>It can be concluded that simple linear model might not be BLUE model here to examine the hypothesized relationship.</p>
+<p>Additionally, a White’sRobust Standard Errors is utilized for correcting estimates of OLS regression coefficients of release year in the presence of heteroskedasticity.The adjustment resulted in a slightly different standard error for the release year coefficient.</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="edm-as-study-music-popularity.html#cb17-1" tabindex="-1"></a>robust_1<span class="ot">&lt;-</span><span class="fu">vcovHC</span>(reg_1,<span class="st">&quot;HC1&quot;</span>)</span>
+<span id="cb17-2"><a href="edm-as-study-music-popularity.html#cb17-2" tabindex="-1"></a>result_1<span class="ot">&lt;-</span><span class="fu">coeftest</span>(reg_1,robust_1)</span>
+<span id="cb17-3"><a href="edm-as-study-music-popularity.html#cb17-3" tabindex="-1"></a>result_1[<span class="st">&quot;release_year&quot;</span>,]</span></code></pre></div>
+<pre><code>##     Estimate   Std. Error      t value     Pr(&gt;|t|) 
+## 1.868585e+00 1.417803e-01 1.317944e+01 3.981126e-39</code></pre>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="edm-as-study-music-popularity.html#cb19-1" tabindex="-1"></a><span class="fu">summary</span>(reg_1)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = track_popularity ~ release_year + danceability + 
+##     valence, data = edm)
+## 
+## Residuals:
+##    Min     1Q Median     3Q    Max 
+## -47.65 -18.15  -0.60  15.68  95.25 
+## 
+## Coefficients:
+##                Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)  -3.734e+03  1.747e+02 -21.375  &lt; 2e-16 ***
+## release_year  1.869e+00  8.661e-02  21.574  &lt; 2e-16 ***
+## danceability -9.099e+00  2.488e+00  -3.657 0.000257 ***
+## valence       1.739e+01  1.365e+00  12.741  &lt; 2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 22.12 on 6039 degrees of freedom
+## Multiple R-squared:  0.088,  Adjusted R-squared:  0.08755 
+## F-statistic: 194.2 on 3 and 6039 DF,  p-value: &lt; 2.2e-16</code></pre>
+<div id="conclusion-from-ols" class="section level3 hasAnchor" number="2.2.1">
+<h3><span class="header-section-number">2.2.1</span> Conclusion From OLS<a href="edm-as-study-music-popularity.html#conclusion-from-ols" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Although the results from OLS suggest that simple linear model might not be the best fit for the given data, it can still be concluded from the OLS regressions that:</p>
+<p>-<strong>1. Release Year</strong>: holding other variables constant, for each additional release year, the popularity scores of EDM songs increases by approximately 1.869 points, suggesting newer EDM songs tend to be more popular, supporting hypothesis 4.</p>
+<p>-<strong>2. Danceability</strong>: contrary to what might be expected, a significant but negative relationship between danceability feature and track popularity score. For each additional 0.1 increase in danceability score, the track’s popularity would decrease by approximately 0.9099 points.</p>
+<p>-<strong>3. Valence</strong>: a significant and strongly positive relationship exists between valence and track popularity score, predicted by the model. Holding others constant, for each additioanl 0.1 increase in valence score, the track’s popularity scores would increase by approximately 1.7389 points.</p>
+<p>-<strong>4. R-squared</strong>: approximately only 8.8% of the variability in track popularity can be explained when utilizing a simple linear model.</p>
+<p>-<strong>5. F Statistic</strong>: with a 194.24 f-statistic score, indicating that the model as a whole is statistically significant.</p>
+<p>Overall, the OLS regression supports Hypothesis 4 (H4) and partially supports Hypothesis 3 (H3). Contrary to the original hypothesis regarding the relationship between danceability and popularity, this might be due to two reasons: 1) Danceability might be inversely correlated with other musical features that affect popularity. 2) In line with Loepthien’s 2022 study, users in a studying context might prefer less danceable tracks for background listening. Additionally, issues with model fit, as indicated by the residual analysis and regression diagnostics, suggest that further investigation with more complex models or additional variables might be necessary for a more comprehensive understanding of what drives the popularity of EDM songs.</p>
+
+</div>
+</div>
+<!-- </div> -->
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-loepthien2022flow" class="csl-entry">
+Loepthien, Till, and Bernhard Leipold. 2022. <span>“Flow in Music Performance and Music-Listening: Differences in Intensity, Predictors, and the Relationship Between Flow and Subjective Well-Being.”</span> <em>Psychology of Music</em> 50 (1): 111–26.
+</div>
+<div id="ref-NationalUniversity2021" class="csl-entry">
+Masha, Godkin. 2021. <span>“Can Music Help You Study and Focus?”</span> <a href="https://www.nu.edu/blog/can-music-help-you-study-and-focus/" class="uri">https://www.nu.edu/blog/can-music-help-you-study-and-focus/</a>.
+</div>
+<div id="ref-Spotify2021" class="csl-entry">
+Spotify. 2021. <span>“New Spotify Study Shows Audio Is the Number One Productivity Booster.”</span> <a href="https://newsroom.spotify.com/2021-03-04/new-spotify-study-shows-audio-is-the-number-one-productivity-booster/" class="uri">https://newsroom.spotify.com/2021-03-04/new-spotify-study-shows-audio-is-the-number-one-productivity-booster/</a>.
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="why-choose-edm-as-study-music.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="further-exploration-on-key-musical-features-danceability.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/01-EDM_Cognition.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

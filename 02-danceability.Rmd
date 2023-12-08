@@ -1,0 +1,41 @@
+# Further Exploration on Key Musical Features: danceability
+
+## Interpretation Testing
+
+To gain an in-depth understanding of the results for Hypothesis 3 (H3), OLS regression analysis was utilized to test the relationship between danceability and track popularity/valence. This was done in light of various existing evidence that supports the notion that people prefer tracks they can dance or move to, in relation to their reasons for listening. [e.g., @duman2022music; @loepthien2022flow]
+
+Additionally, it is interesting to explore the potential relationship between valence and danceability of an EDM song, especially considering evidence indicating that dance music typically has a higher level of valence.
+
+- **H5**: A higher level of danceability in an EDM song will predict a higher level of perceived valence for the song.
+
+```{r}
+reg_2<-lm(track_popularity~danceability,edm)
+reg_3<-lm(valence~danceability,edm)
+stargazer(reg_2,reg_3,type="text",star.cutoffs=c(.05,.01,.001))
+```
+
+From the results, it can be concluded that when holding other variables constant, the danceability of EDM songs and corresponding track popularity do not exhibit a clear correlational relationship. Additionally, in line with expectations, valence and danceability show a clear positive correlation, as a higher level of danceability in an EDM song leads to higher perceived valence, supporting H5.
+
+If the hypothesis that users increasingly choose EDM as study music significantly drives the popularity of this genre holds valid, the combination of these results suggests that danceability might be inversely correlated with other musical features that affect popularity.
+
+## Interaction Effects of Danceability and Loudness on Popularity
+
+evidence from previous studies on background music' cognitive effect suggests that noise (i.e., extreme value of volume) of background music are considered significantly affect workers' attention (e.g., @shih2012background)
+
+As fewer studies have suggested a relationship between the danceability of a song and its volume, the following research questions are proposed:
+
+- **RQ1**: What is the relationship between the danceability and the volume of an EDM song?
+
+- **RQ2**: Does the relationship between the danceability of EDM songs and their corresponding track popularity depend on the volume level of those songs?
+
+```{r}
+reg_4<-lm(danceability~loudness,edm)
+reg_5<-lm(track_popularity~loudness+danceability+loudness*danceability,edm)
+stargazer(reg_4,reg_5,type="text",star.cutoffs=c(.05,.01,.001))
+```
+
+From the analysis, it can be concluded that:
+
+For RQ1, the volume of an EDM song has only a slight correlational relationship with its danceability, with an estimated coefficient of -0.010.
+
+For RQ2, while the results indicate that the effect of danceability on an EDM song's popularity is somewhat contingent on the song's volume level, the very low R-squared value (0.002437) suggests that the variance in the popularity of an EDM song is hardly captured when considering only danceability and volume in a simple linear regression model. Additionally, given a baseline constant coefficient of 21.567, it might be plausible that due to the inherently high danceability nature of the genre, increasing the danceability might not significantly affect how users choose different songs of such genres as study music.
