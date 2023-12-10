@@ -20,13 +20,13 @@ If the hypothesis that users increasingly choose EDM as study music significantl
 
 ## Interaction Effects of Danceability and Loudness on Popularity
 
-evidence from previous studies on background music' cognitive effect suggests that noise (i.e., extreme value of volume) of background music are considered significantly affect workers' attention (e.g., @shih2012background)
+evidence from previous studies on background music' cognitive effect suggests that noise (i.e., extreme loudness) of background music are considered significantly affect workers' attention [e.g., @shih2012background]
 
-As fewer studies have suggested a relationship between the danceability of a song and its volume, the following research questions are proposed:
+As fewer studies have suggested a relationship between the danceability of a song and its loudness, the following research questions are proposed:
 
-- **RQ1**: What is the relationship between the danceability and the volume of an EDM song?
+- **RQ1**: What is the relationship between the danceability and the loudness of an EDM song?
 
-- **RQ2**: Does the relationship between the danceability of EDM songs and their corresponding track popularity depend on the volume level of those songs?
+- **RQ2**: Does the relationship between the danceability of EDM songs and their corresponding track popularity depend on the loudness level of those songs?
 
 ```{r}
 reg_4<-lm(danceability~loudness,edm)
@@ -36,6 +36,6 @@ stargazer(reg_4,reg_5,type="text",star.cutoffs=c(.05,.01,.001))
 
 From the analysis, it can be concluded that:
 
-For RQ1, the volume of an EDM song has only a slight correlational relationship with its danceability, with an estimated coefficient of -0.010.
+For RQ1, the loudness of an EDM song has only a slight correlational relationship with its danceability, with an estimated coefficient of -0.010.
 
-For RQ2, while the results indicate that the effect of danceability on an EDM song's popularity is somewhat contingent on the song's volume level, the very low R-squared value (0.002437) suggests that the variance in the popularity of an EDM song is hardly captured when considering only danceability and volume in a simple linear regression model. Additionally, given a baseline constant coefficient of 21.567, it might be plausible that due to the inherently high danceability nature of the genre, increasing the danceability might not significantly affect how users choose different songs of such genres as study music.
+For RQ2, while the results indicate that the effect of danceability on an EDM song's popularity is somewhat contingent on the song's loudness level, the very low R-squared value (0.002437) suggests that the variance in the popularity of an EDM song is hardly captured when considering only danceability and loudness in a simple linear regression model. Additionally, given a baseline constant coefficient of 21.567, it might be plausible that due to the inherently high danceability nature of the genre, increasing the danceability might not significantly affect how users choose different songs of such genres as study music.
