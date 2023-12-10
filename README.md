@@ -1,13 +1,3 @@
-Welcome! 
+This is Junqi's final paper using multiple regression to analyze relationship between Spotify's audio features and track_popularity and what features make certain genres sound unique.
 
-This is a minimal example of a book based on R Markdown and **bookdown** (https://github.com/rstudio/bookdown). 
-
-This template provides a skeleton file structure that you can edit to create your book. 
-
-The contents inside the .Rmd files provide some pointers to help you get started, but feel free to also delete the content in each file and start fresh.
-
-Additional resources:
-
-The **bookdown** book: https://bookdown.org/yihui/bookdown/
-
-The **bookdown** package reference site: https://pkgs.rstudio.com/bookdown
+Thie orginal dataset was downloaded from Kaggle: https://www.kaggle.com/datasets/joebeachcapital/30000-spotify-songs. This data was originally from Spotify collected using R package "spotifyr"
